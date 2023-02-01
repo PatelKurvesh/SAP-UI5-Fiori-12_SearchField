@@ -3,7 +3,19 @@
 	<App>
 		<pages>
 			<Page title="{i18n>title}">
-				<content></content>
+				<content>
+					<SearchField search="onSearchItem"></SearchField>
+					<!--items is a binding parameter bcz we use aggregation binding-->
+					<List id="fruits" items="{/fruits}">  
+						<ObjectListItem
+						title="{name}"
+						number="{price}">
+							<ObjectAttribute text="{taste}"></ObjectAttribute>
+							<ObjectAttribute text="{color}"></ObjectAttribute>
+							
+						</ObjectListItem>
+					</List>
+				</content>
 			</Page>
 		</pages>
 	</App>
